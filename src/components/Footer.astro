@@ -1,0 +1,48 @@
+---
+import { site } from '../config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-sm">
+        <div class="flex items-center gap-2.5 text-lg font-semibold tracking-tight">
+          <span class="grid size-8 place-items-center rounded-lg bg-brand-700 text-sm font-bold text-white">
+            A
+          </span>
+          {site.name}
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-slate-600">
+          Atención al cliente multicanal: agentes que responden e implementaciones que
+          lo hacen posible.
+        </p>
+      </div>
+
+      <div class="text-sm">
+        <h2 class="font-semibold text-slate-900">Contacto</h2>
+        <ul class="mt-4 space-y-2 text-slate-600">
+          <li>
+            <a href={`mailto:${site.contact.email}`} class="hover:text-brand-700">
+              {site.contact.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`tel:${site.contact.phone.replace(/\s/g, '')}`}
+              class="hover:text-brand-700"
+            >
+              {site.contact.phone}
+            </a>
+          </li>
+          <li>{site.contact.location}</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">
+      &copy; {year} {site.name}. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
